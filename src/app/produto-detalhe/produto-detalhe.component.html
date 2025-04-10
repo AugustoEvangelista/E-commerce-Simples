@@ -1,0 +1,9 @@
+<h2>Detalhes do Produto</h2>
+
+<div *ngIf="produto">
+    <h3>{{ produto.nome }}</h3>
+    <p>Preço: R$ {{ produto.preco }}</p>
+    <p>{{ produto.descricao }}</p>
+  <p *ngIf="produto.emEstoque; else semEstoque">✅ Em estoque</p>
+    <ng-template #semEstoque><p>❌ Fora de estoque</p></ng-template>
+</div>
